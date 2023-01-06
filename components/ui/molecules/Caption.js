@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { Comments } from '../../assets/Comments';
 import { CommentIcon, HeartFill, HeartOutline } from '../../assets/Icons';
+import {useSelector} from "react-redux";
+import {selectComments} from "../../../store/slices/commentSlice";
 
 export default function Caption({ title }) {
-  const comments = Comments.value;
+  const comments = useSelector(selectComments);
 
   const [likeCount, setLikeCount] = useState(23);
   const [userLike, setUserLike] = useState(false);
